@@ -1,0 +1,42 @@
+\documentclass[UTF8,titlepage]{ctexart}
+
+\title{DPI Homework 4}
+\author{孙鑫}
+\date{\today}
+\usepackage{amsmath}
+
+\newcommand{\suminf}{\sum_{n=-\infty}^{\infty}}
+\begin{document}
+\maketitle
+\section*{4.2}
+\setlength{\parindent}{0pt}Show that $\tilde{F}(\mu)$ in Eq. (4.4-2) is infinitely periodic in both directions, with period $1/\Delta T$
+
+\textbf{SOLUTION:}
+
+先证明：
+\begin{align*}
+    \tilde{F}(\mu+k[1/\Delta T])=\tilde{F}
+\end{align*}
+证明如下：
+\begin{align*}
+    \tilde{F}(\mu+k[1/\Delta T]) & =\frac{1}{\Delta T}\sum_{n=-\infty}^{\infty}F(\mu+\frac{k}{\Delta T}-\frac{n}{\Delta T})\\
+        & = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty}F(\mu+\frac{k-n}{\Delta T})\\
+        & = \frac{1}{\Delta T}\sum_{m=-\infty}^{\infty}F(\mu-\frac{m}{\Delta T})\\
+        & = \tilde{F}(\mu)
+\end{align*}
+
+再证明：
+\begin{displaymath}
+    \tilde{F}(\mu+k\Delta T)=\tilde{F}
+\end{displaymath}
+
+证明如下：
+\begin{align*}
+    \tilde{F}(\mu+k\Delta T) &=\suminf f_ne^{-j2\pi(\mu+k/\Delta T)n\Delta T}\\
+    &=\suminf f_ne^{-j2\pi\mu n\Delta T}e^{-j2\pi kn}\\
+    &=\suminf f_ne^{-j2\pi\mu n\Delta T}\\
+    &=\tilde{F}(\mu)
+\end{align*}
+
+
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[UTF8,titlepage]{ctexart}
+
+\title{DPI Homework 3}
+\author{孙鑫}
+\date{\today}
+\usepackage{amsmath}
+\begin{document}
+\maketitle
+
+\section*{3.24}
+\noindent Show that the Laplacian defined in Eq. (3.6\-3) is isotropic (invariant to rotation). You will need the following equations relating coordinates for axis rotation by an angle $\theta$ .
+
+\begin{gather}
+        x = x'cos\theta - y'sin\theta\\
+        y=x'sin\theta + y'cos\theta
+\end{gather}
+\noindent \textbf{solution:}
+
+\noindent 拉普拉斯算子是
+\begin{equation}
+    \nabla^2f=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}
+\end{equation}
+我们需要证明
+\begin{equation}
+    \frac{\partial^2f}{\partial x'^2}+\frac{\partial^2f}{\partial y'^2}=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}
+\end{equation}
+证明如下：
+\begin{gather}
+    \frac{\partial f}{\partial x'}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial x'}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial x'}=\frac{\partial f}{\partial x}\cos \theta+\frac{\partial f}{\partial y}\sin \theta\\
+    \frac{\partial^2f}{\partial x'^2}=\frac{\partial^2f}{\partial x^2}cos^2\theta +\frac{\partial}{\partial x}(\frac{\partial f}{\partial y})sin\theta cos\theta +\frac{\partial}{\partial y}(\frac{\partial f}{\partial x})sin\theta cos\theta + \frac{\partial^2f}{\partial y^2}sin^2\theta
+\end{gather}
+同理可得:
+\begin{gather}
+    \frac{\partial f}{\partial y'}=-\frac{\partial f}{\partial x}\sin \theta+\frac{\partial f}{\partial y}\cos \theta\\
+    \frac{\partial^2f}{\partial y'^2}=\frac{\partial^2f}{\partial y^2}sin^2\theta -\frac{\partial}{\partial x}(\frac{\partial f}{\partial y})sin\theta cos\theta -\frac{\partial}{\partial y}(\frac{\partial f}{\partial x})sin\theta cos\theta + \frac{\partial^2f}{\partial y^2}cos^2\theta     
+\end{gather}
+因此:
+\begin{equation}
+    \frac{\partial^2f}{\partial x'^2}+\frac{\partial^2f}{\partial y'^2}=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}
+\end{equation}
+
+\section*{3.27}
+Give a mask for performing unsharp masking in a single pass through an
+image. Assume that the average image is obtained using the filter in Fig. 3.32(a).
+
+\noindent \textbf{solution:}
+
+\noindent unsharp masking k为1，所以可以得到:
+\begin{equation}
+    g(x,y)=f(x,y)+f(x,y)-\bar{f}(x,y)=2f(x,y)-\bar{f}(x,y) \label{mask}
+\end{equation}
+$\bar{f}(x,y)$的mask是
+
+$$\frac{1}{9}\qquad\frac{1}{9}\qquad\frac{1}{9}$$
+$$\frac{1}{9}\qquad\frac{1}{9}\qquad\frac{1}{9}$$
+$$\frac{1}{9}\qquad\frac{1}{9}\qquad\frac{1}{9}$$
+f(x,y)对应的mask是
+$$0\qquad0\qquad0$$
+$$0\qquad1\qquad0$$
+$$0\qquad0\qquad0$$
+上面两个mask根据公式\eqref{mask} 进行运算可得 unsharp masking 的mask为
+
+$$-\frac{1}{9}\qquad-\frac{1}{9}\qquad-\frac{1}{9}$$
+$$-\frac{1}{9}\qquad\quad\frac{17}{9}\qquad-\frac{1}{9}$$
+$$-\frac{1}{9}\qquad-\frac{1}{9}\qquad-\frac{1}{9}$$
+\end{document}
