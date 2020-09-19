@@ -15,9 +15,11 @@
 
 先证明：
 \begin{align*}
-    \tilde{F}(\mu+k[1/\Delta T])=\tilde{F}
+    \tilde{F}(\mu+k[1/\Delta T])=\tilde{F}(\mu)
 \end{align*}
 证明如下：
+
+根据公式4.3-5
 \begin{align*}
     \tilde{F}(\mu+k[1/\Delta T]) & =\frac{1}{\Delta T}\sum_{n=-\infty}^{\infty}F(\mu+\frac{k}{\Delta T}-\frac{n}{\Delta T})\\
         & = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty}F(\mu+\frac{k-n}{\Delta T})\\
@@ -27,10 +29,12 @@
 
 再证明：
 \begin{displaymath}
-    \tilde{F}(\mu+k\Delta T)=\tilde{F}
+    \tilde{F}(\mu+k\Delta T)=\tilde{F}(\mu)
 \end{displaymath}
 
 证明如下：
+
+根据公式4.4-2
 \begin{align*}
     \tilde{F}(\mu+k\Delta T) &=\suminf f_ne^{-j2\pi(\mu+k/\Delta T)n\Delta T}\\
     &=\suminf f_ne^{-j2\pi\mu n\Delta T}e^{-j2\pi kn}\\
